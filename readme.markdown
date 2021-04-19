@@ -68,9 +68,11 @@ To view individual requirement solutions, review the steps below.
 * [Java Development Kit v.11.28](https://openjdk.java.net/projects/jdk/11/)
 <br>
 Please ensure you also download the following package:
+
 * [Junit 5] Testing Framework
 * [Cucumber Eclipse Plugin]
 * [Maven Integration for Eclipse]
+<br>
 
 You can download these plugins in the Eclipse Marketplace.You should also add the following dependencies to your project:
 ```java
