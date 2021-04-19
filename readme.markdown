@@ -1,8 +1,8 @@
 ﻿<!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/U815073/CucumberAPIDemo/">
-    <img src="images/logging-picture.png" alt="Logo">
+  <a href="https://github.com/rkelly310/CucumberAPIDemo/">
+    <img src="images/cucumber.png" alt="Logo">
   </a>
 
   <h2 align="center">Creating and Testing BDD Scenarios using Cucumber and Selenium Webdriver</h2>
