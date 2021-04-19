@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.automationwf.example.runners.WFCucumberTest" tests="0" skipped="0" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="DESKTOP-PLAC46R" time="0.0">
+  <properties/>
+  <system-out><![CDATA[Feature: Google Searching
+  As a web surfer,
+  I want to search Google,
+  So that I can learn new things.
+
+  @automated @web @google @panda
+  Scenario: Simple Google search              ?[90m# src/test/resources/com/automationWF/example/features/GoogleSearch.feature:7?[0m
+
+1 Scenarios (?[32m1 passed?[0m)
+3 Steps (?[32m3 passed?[0m)
+0m5.619s
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

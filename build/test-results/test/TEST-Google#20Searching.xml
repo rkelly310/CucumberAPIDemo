@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Google Searching" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-04-19T17:44:39" hostname="DESKTOP-PLAC46R" time="5.559">
+  <properties/>
+  <testcase name="Simple Google search" classname="Google Searching" time="5.559"/>
+  <system-out><![CDATA[    ?[32mGiven ?[0m?[32ma web browser is on the Google page?[0m ?[90m# GoogleSearchSteps.aWebBrowserIsOnTheGooglePage()?[0m
+    ?[32mWhen ?[0m?[32mthe search phrase "?[0m?[32m?[1mpanda?[0m?[32m" is entered?[0m ?[90m# GoogleSearchSteps.theSearchPhraseIsEntered(String)?[0m
+    ?[32mThen ?[0m?[32mresults for "?[0m?[32m?[1mpanda?[0m?[32m" are shown?[0m        ?[90m# GoogleSearchSteps.resultsForAreShown(String)?[0m
+]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 89.0.4389.23 (61b08ee2c50024bab004e48d2b1b083cdbdac579-refs/branch-heads/4389@{#294}) on port 23392
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Apr 19, 2021 1:44:40 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>
