@@ -66,11 +66,11 @@ To view individual requirement solutions, review the steps below.
 
 * [Eclipse IDE] Version: 2021-03 (4.19.0) (https://www.eclipse.org/downloads/)
 * [Java Development Kit v.11.28](https://openjdk.java.net/projects/jdk/11/)
-* <br>
+<br>
 Please ensure you also download the following package:
-*[Junit 5] Testing Framework
-*[Cucumber Eclipse Plugin]
-*[Maven Integration for Eclipse]
+* [Junit 5] Testing Framework
+* [Cucumber Eclipse Plugin]
+* [Maven Integration for Eclipse]
 
 You can download these plugins in the Eclipse Marketplace.You should also add the following dependencies to your project:
 ```java
