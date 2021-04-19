@@ -1,23 +1,23 @@
 ﻿<!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/rkelly310/NLogDemo/">
+  <a href="https://github.com/U815073/CucumberAPIDemo/">
     <img src="images/logging-picture.png" alt="Logo">
   </a>
 
-  <h2 align="center">Writing, Configuring and Locating Log Files using NLog</h2>
+  <h2 align="center">Creating and Testing BDD Scenarios using Cucumber and Selenium Webdriver</h2>
 
   <p align="center">
-    A demo lab instructing users on how to configure structured and unstructured log files, set targets and write logging syntax using dotNET Core and the NLog Framework.
+    A demo lab instructing users on construct BDD test projects, feature files, step definitions and test runners to complete a BDD test iteration.
     <br />
-    <a href="https://github.com/rkelly310/NLogDemo"><strong>Explore the docs �</strong></a>
+    <a href="https://github.com/U815073/CucumberAPIDemo/"><strong>Explore the docs �</strong></a>
     <br />
     <br />
-    <a href="https://github.com/rkelly310/NLogDemo">View Demo</a>
+    <a href="https://github.com/U815073/CucumberAPIDemo/">View Demo</a>
     �
-    <a href="https://github.com/rkelly310/NLogDemo/issues">Report Bug</a>
+    <a href="https://github.com/U815073/CucumberAPIDemo/issues">Report Bug</a>
     �
-    <a href="https://github.com/rkelly310/NLogDemo/issues">Request Feature</a>
+    <a href="https://github.com/U815073/CucumberAPIDemo/issues">Request Feature</a>
   </p>
 </p>
 
@@ -59,35 +59,78 @@
 <!-- ABOUT THE PROJECT -->
 ### About The Project
 
-This project is designed for a lab environment within a Test Automation course. Students will build out a series of tests using a String input with increasing requirements and write classes to validate them.
-To view individual requirement solutions, select the requirement below:
+This project is designed for a lab environment within a Test Automation and Behavior-Driven Development course. Students will build out a feature file, a series of step definitions, a Cucumber test runner class to test a webdriver application that searches a google page for a specific phrase and passes only if the search results match the phrase.
+To view individual requirement solutions, review the steps below.
 
 ### Built With
 
-* [Visual Studio 2019 Community](https://visualstudio.microsoft.com/vs/community/)
-* [.NET Core](https://dotnet.microsoft.com/download/dotnet-core)
+* [Visual Studio 2019 Community](https://www.eclipse.org/downloads/)
+* [Java Development Kit v.11.28](https://openjdk.java.net/projects/jdk/11/)
 Please ensure you also download the following package:
-* [NLog](https://nlog-project.org) Testing Framework
+* [Junit 5] Testing Framework
 <br>
+*[Cucumber Eclipse Plugin]
+*[Maven Integration for Eclipse]
 
-You can download this package in Visual Studio directly under 
-<br />
+You can download these plugins in the Eclipse Marketplace.You should also add the following dependencies to your project:
+```java
+    <dependencies>
+        <!-- AssertJ -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.8.0</version>
+            <scope>test</scope>
+        </dependency>
 
-**Tools -> NuGet Package Manager -> Manage NuGet Packages For Solution**
+        <!-- Cucumber -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>2.0.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>2.0.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>2.0.1</version>
+            <scope>test</scope>
+        </dependency>
 
+        <!-- JUnit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Selenium WebDriver -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.6.0</version>
+        </dependency>
+```
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
 ### Prerequisites
 
-None, other than an installation of Visual Studio Community or Visual Studio Code.
+None, other than a a Java IDE (preferred Eclipse), and either Gradle or Maven.
 
 ### Installation
 
 Simply clone the repo to see the full solution:
    ```sh
-   git clone https://github.com/rkelly310/NLogDemo.git
+   git clone https://github.com/U815073/CucumberAPIDemo.git
    ```
 <!-- Instructions -->
 ## Instructions
@@ -175,7 +218,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Project Link: [https://github.com/rkelly310/NLogDemo](https://github.com/rkelly310/NLogDemo)
+Project Link: [https://github.com/U815073/CucumberAPIDemo](https://github.com/U815073/CucumberAPIDemo)
 
 
 
