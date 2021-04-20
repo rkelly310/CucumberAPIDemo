@@ -138,7 +138,8 @@ Simply clone the repo to see the full solution:
 <!-- Instructions -->
 ## Instructions
 ### Task 1: Review the currently existing .java files
-Once the application has been cloned, take a look at the four primary .java files that are packaged into the application within the **src/test/java** classpath.  
+Once the application has been cloned, take a look at the four primary .java files that are packaged into the application within the **src/test/java** classpath.
+<br>
 **framework/AbstractWFPage.java**  
 This file imports our selenium webdriver and sets up the Webpage's base class. It also initializes the methods that each webpage object can utilize (getDriver, driverWait). The class will be instantiated once our webpage is opened. Since we are employing chromedriver.exe, this class is inherited by our next 'GooglePage.java' file.  
 **pages/GooglePage.java**  
@@ -163,7 +164,7 @@ Feature: Google Searching
     Then results for "examplephrase" are shown
 ```
 <br>
-**Task 2: Run the Test**
+**Task 2: Run the Test**  
 Once the project has been built successfully, this project can be tested using the  
 ```
 mvn clean test
