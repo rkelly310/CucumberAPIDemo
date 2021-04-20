@@ -5,7 +5,7 @@
     <img src="images/cucumber.png" alt="Logo">
   </a>
 
-  <h2 align="center">Creating and Testing BDD Scenarios using Cucumber and Selenium Webdriver</h2>
+  <h2 align="center">Creating and Testing BDD Scenarios using Cucumber-JVM and Selenium Webdriver</h2>
 
   <p align="center">
     A demo lab instructing users on construct BDD test projects, feature files, step definitions and test runners to complete a BDD test iteration.
@@ -59,15 +59,16 @@
 <!-- ABOUT THE PROJECT -->
 ### About The Project
 
-This project is designed for a lab environment within a Test Automation and Behavior-Driven Development course. Students will build out a feature file, a series of step definitions, a Cucumber test runner class to test a webdriver application that searches a google page for a specific phrase and passes only if the search results match the phrase.
+This project is designed for a lab environment within a Test Automation and Behavior-Driven Development course. Students will build out a feature file, a series of step definitions, a Cucumber-JVM test runner class to test a basic webdriver application that searches a google page for a specific phrase and passes only if the search results match the phrase.
 To view individual requirement solutions, review the steps below.
 
 ### Built With
 
 * [Eclipse IDE] Version: 2021-03 (4.19.0) (https://www.eclipse.org/downloads/)
 * [Java Development Kit v.11.28](https://openjdk.java.net/projects/jdk/11/)
+* Chromedriver.exe (or another browser equivalent) existing in your System PATH
 <br>
-Please ensure you also download the following package:
+**Please ensure you also download the following plugins if you do not have them already:**
 
 * [Junit 5] Testing Framework
 * [Cucumber Eclipse Plugin]
@@ -136,82 +137,58 @@ Simply clone the repo to see the full solution:
    ```
 <!-- Instructions -->
 ## Instructions
-### Task 1: Creating a simple log file and targetting the console
-
-The first step in this lab is to create a **Console Application (.Net Core)** project in Visual Studio. We will use this to demonstrate a basic use of the NLog framework. Once the solution has been created, add an Application Configuration file to the solution using the 'Add'/'New Item' option under your project. Rename this file as  **'NLog.config'** (alternatively, you can download the preexisting NLog.Config file directly from Nuget Package Manager as its own package, but the file must be modified in a separate code editor, since it is read-only by default).  
-Replace all of the code in this config file with the following XML code:
-```csharp
-//we initialize all NLog.config files with the folowing three lines of code to set basic properties and schema sources for various target types.
-<?xml version="1.0" encoding="utf-8" ?>
-<nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
-    <targets>
-        <target name="logfile" xsi:type="File" fileName="file.txt" />
-        <target name="logconsole" xsi:type="Console" />
-    </targets>
-
-    <rules>
-        <logger name="*" minlevel="Info" writeTo="logconsole" />
-        <logger name="*" minlevel="Debug" writeTo="logfile" />
-    </rules>
-</nlog>
+### Task 1: Review the currently existing .java files  
+Once the application has been cloned, take a look at the four primary .java files that are packaged into the application within the **src/test/java** classpath.
+**framework/AbstractWFPage.java**  
+This file imports our selenium webdriver and sets up the Webpage's base class. It also initializes the methods that each webpage object can utilize (getDriver, driverWait). The class will be instantiated once our webpage is opened. Since we are employing chromedriver.exe, this class is inherited by our next 'GooglePage.java' file.
+**pages/GooglePage.java**  
+This file extends our webpage class to create a Google Webpage-specific child class. It sets the constructor and calls the 'super' keyword to refer to the instant parent class. It also declares specific actions that can be taken by the Google webpage.  
+**runners/WFCucumberTest.java**  
+This is our runner class that points our Junit framework plugin to our feature and glue files that contain our Cucumber steps and step definitions respectively.  
+**stepdefs/GoogleSearchSteps.java**  
+This file elaborates on the Gherkin scenario to give each statement a corresponding method test within our Google webpage. It also defines a few 'hooks' to run before and after the sample test.
+<br>
+**GoogleSearch.Feature**  
+This is our feature file, which can be found in the **src/test/resources** path. It's contents are shown here:  
 ```
+Feature: Google Searching
+  As a web developer,
+  I want to search Google,
+  So that I can learn new solutions to current software problems.
 
-We initialize all NLog.config files with the first three lines of code to set basic properties and schema sources for various target types. In this XML, we have added two 'targets' and two 'rules'. The first target is writing to a text file in our local directory, simply called 'file.txt', and has declared this target name as 'logfile'. It has a corresponding rule to only record errors with a minimum level of 'Debug'or higher, so we won't see any Trace or Info statements in our text file. We also have a second target named 'logconsole', which will be writing all logged statements directly to our Console as a sanity test.  
-Now, let's add some sample code to log against. In the 'Program.cs' file, copy the following Class code:
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Text;
-using NLog;
-
-namespace NLogDemoOne
-{
-    class NLogTestOne
-    {
-        private static Logger logger = LogManager.GetCurrentClassLogger();
-
-        static void Main(string[] args)
-        {
-            logger.Error("This Is An Error Message!");
-            logger.Info("This Is An Info Message!");
-        }
-    }
-}
+  @automated @web @google
+  Scenario: Simple Google search
+    Given a web browser is on the Google page
+    When the search phrase "examplephrase" is entered
+    Then results for "examplephrase" are shown
 ```
-In this class, we are initializing our Logger object for the current class code, and attempting to log two statements (one Info, one Error). When this application is run, the console should return just the Error statement, and the local text file (file.txt) should have been generated with both statements in an unstructured format, like so:
-```sh
-2021-03-16 11:25:06.6569|DEBUG|NLogDemoOne.NLogTestOne|This Is An Debug Message!
-2021-03-16 11:25:35.0628|ERROR|NLogDemoOne.NLogTestOne|This Is An Error Message!
+  
+**Task 2: Run the Test**  
+Once the project has been built successfully, this project can be tested using the
 ```
-This logging format (Datetime|Level|Class|Statement) is the default for NLog. In the next task, we'll look at changing this format and logging to a specific location.
-
-### Task 2: Creating a JSON log file and targetting a filepath
-
-Next, lets replace our targets and rules in the NLog.config file with some different properties:
-```csharp
-<targets>
-<target name="jsonFile" xsi:type="File" fileName="C:/logtest.json" >
-      <layout xsi:type="JsonLayout" includeAllProperties="Boolean" excludeProperties="Comma-separated list (string)">
-              <attribute name="time" layout="${longdate}" />
-              <attribute name="level" layout="${level:upperCase=true}"/>
-              <attribute name="message" layout="${message}" />
-       </layout>
-</target>
-<target name="logconsole" xsi:type="Console" />
-</targets>
-
-    <rules>
-        <logger name="*" minlevel="Info" writeTo="logconsole" />
-        <logger name="*" minlevel="Error" writeTo="jsonfile" />
-    </rules>
+mvn clean test
 ```
-Not only is our new 'jsonFile' target recording at a specific location (the C:/ folder), we have also passed a 'layout' element to allow for log format configuration. We have three attributes and separated their key-values by commas to conform to JSON file format. Now, when we build and run the same 'NLogTestOne' class code as in the first task, we should find a JSON file in the 'C:/' filepath which should be formatted as such:
-```sh
-{ "time": "2021-03-16 11:40:48.7673", "level": "ERROR", "message": "This Is An Error Message!" }
+command within the cmd directory of the project, or with gradle using the command:
 ```
+gradlew bootRun
+```
+You should see the webdriver initialize and open your browser, auto-search the phrase, scan the search results and close the browser successfully. This simple example provides the scaffolding to perform Selenium automated non-function testing on various components of your web applications, and can be extended for cross-browser testing as well.
 
+**Task 3: Extend Test Functionality**
+To practice BDD and automation, try the following exercises:
+<br>
+The assertion for the "results for ___ are shown" step checks only the page title. Add more comprehensive assertions to strengthen the test.  
+Add a new scenario to search Google for images.  
+Add a new scenario to perform Google searches directly using URL query parameters.  
+Add a new feature for basic tests against Wikipedia using a new page object class, a new step definition class, and dependency injection.  
+Picking a language from the home page.  
+Searching for articles.  
+Verifying that embedded links navigate to the correct articles.  
+Viewing page history.  
+Make it possible to choose the web browser using a properties file. Classes to read the properties file and construct the appropriate web driver should be put in the framework package.  
+Write a new feature for basic service-level testing. Use REST Assured to hit a few endpoints from JSONPlaceholder.  
+Create separate test runners that partition the set of features using tags.  
+Add logging to the tests with SLF4J or Extent Reports.  
 <!-- LICENSE -->
 ## License
 
