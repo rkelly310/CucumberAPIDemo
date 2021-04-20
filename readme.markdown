@@ -180,18 +180,18 @@ You should see the webdriver initialize and open your browser, auto-search the p
 ### Task 3: Extend Test Functionality  
 To practice BDD and automation, try the following exercises:  
 <br>
-The assertion for the "results for ___ are shown" step checks only the page title. Add more comprehensive assertions to strengthen the test.  
-Add a new scenario to search Google for images.  
-Add a new scenario to perform Google searches directly using URL query parameters.  
-Add a new feature for basic tests against Wikipedia using a new page object class, a new step definition class, and dependency injection.  
-Picking a language from the home page.  
-Searching for articles.  
-Verifying that embedded links navigate to the correct articles.  
-Viewing page history.  
-Make it possible to choose the web browser using a properties file. Classes to read the properties file and construct the appropriate web driver should be put in the framework package.  
-Write a new feature for basic service-level testing. Use REST Assured to hit a few endpoints from JSONPlaceholder.  
-Create separate test runners that partition the set of features using tags.  
-Add logging to the tests with SLF4J or Extent Reports. 
+1. The assertion for the "results for ___ are shown" step checks only the page title. Add more comprehensive assertions to strengthen the test.  
+2. Add a new scenario to search Google for images.  
+3. Add a new scenario to perform Google searches directly using URL query parameters.  
+4. Add a new feature for basic tests against Wikipedia using a new page object class, a new step definition class, and dependency injection.  
+5. Picking a language from the home page.  
+6. Searching for articles.  
+7. Verifying that embedded links navigate to the correct articles.  
+8. Viewing page history.  
+9. Make it possible to choose the web browser using a properties file. Classes to read the properties file and construct the appropriate web driver should be put in the framework package.  
+10. Write a new feature for basic service-level testing. Use REST Assured to hit a few endpoints from JSONPlaceholder.  
+11. Create separate test runners that partition the set of features using tags.  
+12. Add logging to the tests with SLF4J or Extent Reports. 
 <br>
 <!-- LICENSE -->
 ## License
