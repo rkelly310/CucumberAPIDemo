@@ -66,7 +66,7 @@ To view individual requirement solutions, review the steps below.
 
 * [Eclipse IDE] Version: 2021-03 (4.19.0) (https://www.eclipse.org/downloads/)
 * [Java Development Kit v.11.28](https://openjdk.java.net/projects/jdk/11/)
-* Chromedriver.exe (or another browser equivalent) existing in your System PATH
+* Chromedriver.exe (or another browser equivalent) existing in your System PATH) https://chromedriver.chromium.org/downloads
 <br>
 **Please ensure you also download the following plugins if you do not have them already:**
 
