@@ -137,16 +137,16 @@ Simply clone the repo to see the full solution:
    ```
 <!-- Instructions -->
 ## Instructions
-### Task 1: Review the currently existing .java files  
-Once the application has been cloned, take a look at the four primary .java files that are packaged into the application within the **src/test/java** classpath.
+### Task 1: Review the currently existing .java files
+Once the application has been cloned, take a look at the four primary .java files that are packaged into the application within the **src/test/java** classpath.  
 **framework/AbstractWFPage.java**  
-This file imports our selenium webdriver and sets up the Webpage's base class. It also initializes the methods that each webpage object can utilize (getDriver, driverWait). The class will be instantiated once our webpage is opened. Since we are employing chromedriver.exe, this class is inherited by our next 'GooglePage.java' file.
+This file imports our selenium webdriver and sets up the Webpage's base class. It also initializes the methods that each webpage object can utilize (getDriver, driverWait). The class will be instantiated once our webpage is opened. Since we are employing chromedriver.exe, this class is inherited by our next 'GooglePage.java' file.  
 **pages/GooglePage.java**  
 This file extends our webpage class to create a Google Webpage-specific child class. It sets the constructor and calls the 'super' keyword to refer to the instant parent class. It also declares specific actions that can be taken by the Google webpage.  
 **runners/WFCucumberTest.java**  
 This is our runner class that points our Junit framework plugin to our feature and glue files that contain our Cucumber steps and step definitions respectively.  
 **stepdefs/GoogleSearchSteps.java**  
-This file elaborates on the Gherkin scenario to give each statement a corresponding method test within our Google webpage. It also defines a few 'hooks' to run before and after the sample test.
+This file elaborates on the Gherkin scenario to give each statement a corresponding method test within our Google webpage. It also defines a few 'hooks' to run before and after the sample test.  
 <br>
 **GoogleSearch.Feature**  
 This is our feature file, which can be found in the **src/test/resources** path. It's contents are shown here:  
@@ -164,18 +164,18 @@ Feature: Google Searching
 ```
   
 **Task 2: Run the Test**  
-Once the project has been built successfully, this project can be tested using the
+Once the project has been built successfully, this project can be tested using the  
 ```
 mvn clean test
 ```
-command within the cmd directory of the project, or with gradle using the command:
+command within the cmd directory of the project, or with gradle using the command:  
 ```
 gradlew bootRun
 ```
-You should see the webdriver initialize and open your browser, auto-search the phrase, scan the search results and close the browser successfully. This simple example provides the scaffolding to perform Selenium automated non-function testing on various components of your web applications, and can be extended for cross-browser testing as well.
+You should see the webdriver initialize and open your browser, auto-search the phrase, scan the search results and close the browser successfully. This simple example provides the scaffolding to perform Selenium automated non-function testing on various components of your web applications, and can be extended for cross-browser testing as well.  
 
-**Task 3: Extend Test Functionality**
-To practice BDD and automation, try the following exercises:
+**Task 3: Extend Test Functionality**  
+To practice BDD and automation, try the following exercises:  
 <br>
 The assertion for the "results for ___ are shown" step checks only the page title. Add more comprehensive assertions to strengthen the test.  
 Add a new scenario to search Google for images.  
