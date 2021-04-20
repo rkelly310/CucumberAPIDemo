@@ -163,7 +163,7 @@ Feature: Google Searching
     Then results for "examplephrase" are shown
 ```
   
-**Task 2: Run the Test**  
+<li>**Task 2: Run the Test**</li> 
 Once the project has been built successfully, this project can be tested using the  
 ```
 mvn clean test
