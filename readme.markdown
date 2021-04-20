@@ -138,7 +138,7 @@ Simply clone the repo to see the full solution:
 <!-- Instructions -->
 ## Instructions
 ### Task 1: Review the currently existing .java files
-Once the application has been cloned, take a look at the four primary .java files that are packaged into the application within the **src/test/java** classpath.
+Once the application has been cloned, take a look at the four primary .java files that are packaged into the application within the **src/test/java** classpath.  
 <br>
 **framework/AbstractWFPage.java**  
 This file imports our selenium webdriver and sets up the Webpage's base class. It also initializes the methods that each webpage object can utilize (getDriver, driverWait). The class will be instantiated once our webpage is opened. Since we are employing chromedriver.exe, this class is inherited by our next 'GooglePage.java' file.  
@@ -164,6 +164,7 @@ Feature: Google Searching
     Then results for "examplephrase" are shown
 ```
 <br>
+
 **Task 2: Run the Test**  
 Once the project has been built successfully, this project can be tested using the  
 ```
@@ -175,6 +176,7 @@ gradlew bootRun
 ```
 You should see the webdriver initialize and open your browser, auto-search the phrase, scan the search results and close the browser successfully. This simple example provides the scaffolding to perform Selenium automated non-function testing on various components of your web applications, and can be extended for cross-browser testing as well.  
 <br>
+
 **Task 3: Extend Test Functionality**  
 To practice BDD and automation, try the following exercises:  
 <br>
