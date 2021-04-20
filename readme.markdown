@@ -162,8 +162,8 @@ Feature: Google Searching
     When the search phrase "examplephrase" is entered
     Then results for "examplephrase" are shown
 ```
-  
-<li>**Task 2: Run the Test**</li> 
+<br>
+**Task 2: Run the Test**
 Once the project has been built successfully, this project can be tested using the  
 ```
 mvn clean test
@@ -173,7 +173,7 @@ command within the cmd directory of the project, or with gradle using the comman
 gradlew bootRun
 ```
 You should see the webdriver initialize and open your browser, auto-search the phrase, scan the search results and close the browser successfully. This simple example provides the scaffolding to perform Selenium automated non-function testing on various components of your web applications, and can be extended for cross-browser testing as well.  
-
+<br>
 **Task 3: Extend Test Functionality**  
 To practice BDD and automation, try the following exercises:  
 <br>
@@ -188,7 +188,8 @@ Viewing page history.
 Make it possible to choose the web browser using a properties file. Classes to read the properties file and construct the appropriate web driver should be put in the framework package.  
 Write a new feature for basic service-level testing. Use REST Assured to hit a few endpoints from JSONPlaceholder.  
 Create separate test runners that partition the set of features using tags.  
-Add logging to the tests with SLF4J or Extent Reports.  
+Add logging to the tests with SLF4J or Extent Reports. 
+<br>
 <!-- LICENSE -->
 ## License
 
