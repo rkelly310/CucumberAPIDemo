@@ -165,7 +165,7 @@ Feature: Google Searching
 ```
 <br>
 
-**Task 2: Run the Test**  
+### Task 2: Run the Test  
 Once the project has been built successfully, this project can be tested using the  
 ```
 mvn clean test
@@ -177,7 +177,7 @@ gradlew bootRun
 You should see the webdriver initialize and open your browser, auto-search the phrase, scan the search results and close the browser successfully. This simple example provides the scaffolding to perform Selenium automated non-function testing on various components of your web applications, and can be extended for cross-browser testing as well.  
 <br>
 
-**Task 3: Extend Test Functionality**  
+### Task 3: Extend Test Functionality  
 To practice BDD and automation, try the following exercises:  
 <br>
 The assertion for the "results for ___ are shown" step checks only the page title. Add more comprehensive assertions to strengthen the test.  
